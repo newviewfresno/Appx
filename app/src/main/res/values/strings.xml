@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">NewView</string>
+    <string name="title_activity_qr_generator">qr_generator</string>
+</resources>
