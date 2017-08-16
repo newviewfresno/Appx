@@ -70,7 +70,7 @@
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:text="Submit"
-        android:onClick="gotologinpage"
+        android:onClick="gotoprofile"
         android:layout_below="@+id/spinner_Industry"/>
 
 </RelativeLayout>

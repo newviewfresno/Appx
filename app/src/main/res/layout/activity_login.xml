@@ -37,8 +37,13 @@
             android:id="@+id/bt_signin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="gotoqrpage"
+            android:onClick="gotoprofile"
             android:text="Sign in" />
+
+         <TextView
+             android:id="@+id/tv_msg"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content" />
 
 
         <TextView

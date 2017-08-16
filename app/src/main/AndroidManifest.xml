@@ -32,6 +32,10 @@
         <activity
             android:name=".qr_generator"
             android:label="@string/title_activity_qr_generator"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ProfileActivity"
+            android:label="@string/title_activity_settings"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

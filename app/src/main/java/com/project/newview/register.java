@@ -1,9 +1,7 @@
 package com.project.newview;
 
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
@@ -12,9 +10,6 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class register extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
@@ -62,22 +57,24 @@ public class register extends AppCompatActivity implements AdapterView.OnItemSel
 
     public void gotologinpage_Click(View v){
 
-        final ProgressDialog progressDialog = ProgressDialog.show(register.this,"Please wait...", "Processing..",true);
-        (firebaseAuth.createUserWithEmailAndPassword(txtEmail.getText().toString(),txtPswd.getText().toString())).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                progressDialog.dismiss();
-                if(task.isSuccessful()){
-                    Toast.makeText(register.this, "Registration successful", Toast.LENGTH_LONG).show();
-                    Intent i = new Intent(register.this,login.class);
-                    startActivity(i);
-                }
-                else
-                {
-                    Toast.makeText(register.this,"Registration successful", Toast.LENGTH_LONG).show();
-                }
-            }
-        });
+//        final ProgressDialog progressDialog = ProgressDialog.show(register.this,"Please wait...", "Processing..",true);
+//        (firebaseAuth.createUserWithEmailAndPassword(txtEmail.getText().toString(),txtPswd.getText().toString())).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+//            @Override
+//            public void onComplete(@NonNull Task<AuthResult> task) {
+//                progressDialog.dismiss();
+//                if(task.isSuccessful()){
+//                    Toast.makeText(register.this, "Registration successful", Toast.LENGTH_LONG).show();
+//                    Intent i = new Intent(register.this,login.class);
+//                    startActivity(i);
+//                }
+//                else
+//                {
+//                    Toast.makeText(register.this,"Registration successful", Toast.LENGTH_LONG).show();
+//                }
+//            }
+//        });
+
+
 
     }
 
@@ -93,11 +90,11 @@ public class register extends AppCompatActivity implements AdapterView.OnItemSel
         //Another Interface callback
     }
 
+    public void gotoprofile(View view){
+        Intent profilepage = new Intent(register.this, ProfileActivity.class);
+        startActivity(profilepage);
 
-//    public void gotoqrpage(View view) {
-//        Intent qrpage = new Intent(register.this, qrcode.class);
-//        startActivity(qrpage);
-//    }
+    }
 }
 
 
